@@ -76,12 +76,17 @@ render()
 
 function checkForWinner() {
 winningCombos.forEach(combo => {
-if (Math.abs(board[combo[0]] + board[combo[1]]+ board[combo[2]]+ board[combo[3]]) ===
-4) {
+if (Math.abs(board[combo[0]] + 
+            board[combo[1]]+ 
+            board[combo[2]]+ 
+            board[combo[3]]) ===
+        4) {
 winner = true
 }
 })
 }
+
+
 function switchPlayerTurn() {
 if (winner) return 
 turn *= -1
@@ -153,11 +158,11 @@ squareEls[idx].textContent = ''
 function updateMessage(){
 
 if(!winner && !tie) {
-messageEl.textContent= `its ${turn == 1 ? 'X' : 'O'}'s turn`
+messageEl.textContent= `its ${turn == 1 ? '1' : '2'}'s turn`
 } else if (!winner && tie){
 messageEl.textContent=`Itssa tie 😮‍💨`
 }else{
-messageEl.textContent= `It's ${turn === 1 ? 'X' : 'O'} wins the game!`
+messageEl.textContent= `It's ${turn === 1 ? '1' : '2'} wins the game!`
 }
 }
 
