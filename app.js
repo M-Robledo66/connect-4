@@ -56,7 +56,11 @@ switchPlayerTurn()
 render()
 }
 
-
+function switchPlayerTurn() {
+    if (winner) return 
+    turn *= -1
+    
+    }
 function checkForTie () {
     if(board.includes(null))return
     tie = true
