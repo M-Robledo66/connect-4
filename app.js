@@ -40,6 +40,21 @@ const resetBtn = document.getElementById('reset-btn')
 boardEl.addEventListener('click', handleClick)
 
 
+init()
+
+function handleClick(evt) {
+let sqIdx = parseInt(evt.target.id.replace('sq', ''))
+
+if ( board[sqIdx] || winner) return
+// function that drops token
+placePiece(sqIdx)
+checkForTie()
+checkForWinner()
+switchPlayerTurn()
+render()
+}
+
+
 function init() {
 
     board = [null, null, null, null, null, null, null, null, null]
