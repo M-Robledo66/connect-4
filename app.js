@@ -57,6 +57,14 @@ render()
 }
 
 
+
+
+
+function placePiece(idx){
+    board[idx]= turn
+}
+
+
 function init() {
 
     board = [1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
