@@ -23,14 +23,19 @@ const winningCombos = [
     [36, 37, 38, 39], [40, 39, 38, 37], [7, 14, 21, 28], 
     [8, 15, 22, 29], [9, 16, 23, 30], [10, 17, 24, 31], 
     [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34] 
-    ] 
+    ];
 
 
     const colums=[
         [0, 7, 14, 21, 28, 35],
         [1, 8, 15, 22, 27, 36],
-        
-    ]
+        [2, 9, 16, 23, 30, 37],
+        [3, 10, 17, 24, 31, 38],
+        [4, 11, 18, 25, 32, 39],
+        [5, 12, 19, 26, 33, 40],
+        [6, 13, 20, 27, 34, 41]
+
+    ];
 
     /*---------------------------- Variables (state) ----------------------------*/
 //step 1
@@ -54,9 +59,15 @@ init()
 function handleClick(evt) {
 let sqIdx = parseInt(evt.target.id.replace('sq', ''))
 
-if ( board[sqIdx] || winner) return
-// function that drops token
-placePiece(sqIdx)
+if ( board[sqIdx] || winner){ return
+}
+startPoint = 35
+while (board[sqIdx+ startPoint]!==null){
+    startPoint -= 7
+}
+board[sqIdx+startPoint]= turn
+
+
 checkForTie()
 checkForWinner()
 switchPlayerTurn()
