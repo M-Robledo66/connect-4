@@ -56,6 +56,15 @@ switchPlayerTurn()
 render()
 }
 
+function checkForWinner() {
+    winningCombos.forEach(combo => {
+    if (Math.abs(board[combo[0]] + board[combo[1]]+ board[combo[2]]+ board[combo[3]]) ===
+    4) {
+    winner = true
+    }
+    })
+    }
+
 function switchPlayerTurn() {
     if (winner) return 
     turn *= -1
@@ -119,3 +128,6 @@ function updateMessage(){
     }
     } 
     
+
+
+    drop function finding a bug i have not 
