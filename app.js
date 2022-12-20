@@ -57,7 +57,10 @@ render()
 }
 
 
-
+function checkForTie () {
+    if(board.includes(null))return
+    tie = true
+    }
 
 
 function placePiece(idx){
