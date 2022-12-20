@@ -38,3 +38,52 @@ const resetBtn = document.getElementById('reset-btn')
 /*----------------------------- Event Listeners -----------------------------*/
 
 boardEl.addEventListener('click', handleClick)
+
+
+function init() {
+
+    board = [null, null, null, null, null, null, null, null, null]
+    
+    //  '1' represents player X
+    turn = 1
+    
+    winner = false
+    
+    tie = false
+    render()
+    
+    }
+ 
+    function render () {
+        updateBoard()
+        updateMessage()
+        }
+
+  
+function updateBoard(){
+
+    board.forEach((boardVal, idx) => {
+    if (boardVal === 1){
+    // x ocupies the squareEls[idx] spot
+    squareEls[idx].textContent = '🔴'
+    } else if(boardVal === -1){
+    //O occupies the squareEls[idx] spot
+    squareEls[idx].textContent = '🔵'
+    }else {
+    // if its not 1 or -1, it MUST be null (blank square)
+    squareEls[idx].textContent = ''
+    }
+    })
+    } 
+    
+function updateMessage(){
+
+    if(!winner && !tie) {
+    messageEl.textContent= `its ${turn == 1 ? 'X' : 'O'}'s turn`
+    } else if (!winner && tie){
+    messageEl.textContent=`Itssa tie 😮‍💨`
+    }else{
+    messageEl.textContent= `It's ${turn === 1 ? 'X' : 'O'} wins the game!`
+    }
+    } 
+    
