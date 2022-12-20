@@ -1,5 +1,5 @@
 //step 5
-let winningCombos = [ 
+const winningCombos = [ 
     [0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
     [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
     [21, 22, 23, 24], [20, 19, 18, 17], [28, 29, 30, 31], 
@@ -25,6 +25,13 @@ let winningCombos = [
     [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34] 
     ] 
 
+
+    const colums=[
+        [0, 7, 14, 21, 28, 35],
+        [1, 8, 15, 22, 27, 36],
+        
+    ]
+
     /*---------------------------- Variables (state) ----------------------------*/
 //step 1
 let board , turn, winner, tie
@@ -40,7 +47,7 @@ const resetBtn = document.getElementById('reset-btn')
 /*----------------------------- Event Listeners -----------------------------*/
 
 boardEl.addEventListener('click', handleClick)
-
+/*-------------------------------- Functions --------------------------------*/
 
 init()
 
@@ -57,77 +64,180 @@ render()
 }
 
 function checkForWinner() {
-    winningCombos.forEach(combo => {
-    if (Math.abs(board[combo[0]] + board[combo[1]]+ board[combo[2]]+ board[combo[3]]) ===
-    4) {
-    winner = true
-    }
-    })
-    }
-
-function switchPlayerTurn() {
-    if (winner) return 
-    turn *= -1
-    
-    }
-function checkForTie () {
-    if(board.includes(null))return
-    tie = true
-    }
-
-
-function placePiece(idx){
-    board[idx]= turn
+winningCombos.forEach(combo => {
+if (Math.abs(board[combo[0]] + board[combo[1]]+ board[combo[2]]+ board[combo[3]]) ===
+4) {
+winner = true
 }
+})
+}
+function switchPlayerTurn() {
+if (winner) return 
+turn *= -1
+
+}
+
+function checkForTie () {
+if(board.includes(null))return
+tie = true
+}
+
+
+function placePiece(idx) {
+board[idx] = turn
+}
+
+
 
 
 function init() {
 
-    board = [1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-    
-    //  '1' represents player X
-    turn = 1
-    
-    winner = false
-    
-    tie = false
-    render()
-    
-    }
- //step 4F
-    function render () {
-        updateBoard()
-        updateMessage()
-        }
+board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 
- //step 4B & 4C 
+//  '1' represents player X
+turn = 1
+
+winner = false
+
+tie = false
+render()
+
+}
+// init function will initialize the game state of player
+
+function render () {
+updateBoard()
+updateMessage()
+}
+// function updateBoard() {
+//     for (i = 0; i < board.length; i++){
+//         let currentSqr = squareEls[i]
+//         // currentSqr.textContent = ""
+//         if (board[i]=== -1){
+//             currentSqr.textContent = "O"
+//         } else if(board[i] ===1){
+//             currentSqr.textContent = "X"
+//         }
+//     }
+// }
+
 function updateBoard(){
 
-    board.forEach((boardVal, idx) => {
-    if (boardVal === 1){
-    // x ocupies the squareEls[idx] spot
-    squareEls[idx].textContent = '🔴'
-    } else if(boardVal === -1){
-    //O occupies the squareEls[idx] spot
-    squareEls[idx].textContent = '🔵'
-    }else {
-    // if its not 1 or -1, it MUST be null (blank square)
-    squareEls[idx].textContent = ''
-    }
-    })
-    } 
- //step 4D   
+board.forEach((boardVal, idx) => {
+if (boardVal === 1){
+// x ocupies the squareEls[idx] spot
+squareEls[idx].textContent = '🔴'
+} else if(boardVal === -1){
+//O occupies the squareEls[idx] spot
+squareEls[idx].textContent = '🔵'
+}else {
+// if its not 1 or -1, it MUST be null (blank square)
+squareEls[idx].textContent = ''
+}
+})
+}
+
+
+
 function updateMessage(){
 
-    if(!winner && !tie) {
-    messageEl.textContent= `its ${turn == 1 ? 'X' : 'O'}'s turn`
-    } else if (!winner && tie){
-    messageEl.textContent=`Itssa tie 😮‍💨`
-    }else{
-    messageEl.textContent= `It's ${turn === 1 ? 'X' : 'O'} wins the game!`
-    }
-    } 
+if(!winner && !tie) {
+messageEl.textContent= `its ${turn == 1 ? 'X' : 'O'}'s turn`
+} else if (!winner && tie){
+messageEl.textContent=`Itssa tie 😮‍💨`
+}else{
+messageEl.textContent= `It's ${turn === 1 ? 'X' : 'O'} wins the game!`
+}
+}
+
+
+// boardEl.addEventListener('click', handleClick)
+
+
+// init()
+
+// function handleClick(evt) {
+// let sqIdx = parseInt(evt.target.id.replace('sq', ''))
+
+// if ( board[sqIdx] || winner) return
+// // function that drops token
+// placePiece(sqIdx)
+// checkForTie()
+// checkForWinner()
+// switchPlayerTurn()
+// render()
+// }
+
+// function checkForWinner() {
+//     winningCombos.forEach(combo => {
+//     if (Math.abs(board[combo[0]] + board[combo[1]]+ board[combo[2]]+ board[combo[3]]) ===
+//     4) {
+//     winner = true
+//     }
+//     })
+//     }
+
+// function switchPlayerTurn() {
+//     if (winner) return 
+//     turn *= -1
+    
+//     }
+// function checkForTie () {
+//     if(board.includes(null))return
+//     tie = true
+//     }
+
+
+// function placePiece(idx){
+//     board[idx]= turn
+// }
+
+
+// function init() {
+
+//     board = [1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    
+//     //  '1' represents player X
+//     turn = 1
+    
+//     winner = false
+    
+//     tie = false
+//     render()
+    
+//     }
+//  //step 4F
+//     function render () {
+//         updateBoard()
+//         updateMessage()
+//         }
+
+//  //step 4B & 4C 
+// function updateBoard(){
+
+//     board.forEach((boardVal, idx) => {
+//     if (boardVal === 1){
+//     // x ocupies the squareEls[idx] spot
+//     squareEls[idx].textContent = '🔴'
+//     } else if(boardVal === -1){
+//     //O occupies the squareEls[idx] spot
+//     squareEls[idx].textContent = '🔵'
+//     }else {
+//     // if its not 1 or -1, it MUST be null (blank square)
+//     squareEls[idx].textContent = ''
+//     }
+//     })
+//     } 
+//  //step 4D   
+// function updateMessage(){
+
+//     if(!winner && !tie) {
+//     messageEl.textContent= `its ${turn == 1 ? 'X' : 'O'}'s turn`
+//     } else if (!winner && tie){
+//     messageEl.textContent=`Itssa tie 😮‍💨`
+//     }else{
+//     messageEl.textContent= `It's ${turn === 1 ? 'X' : 'O'} wins the game!`
+//     }
+//     } 
     
 
-
-    drop function finding a bug i have not 
