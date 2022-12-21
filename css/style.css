@@ -17,7 +17,7 @@ section.board {
   grid-template-rows: repeat(6, 10vmin);
   grid-template-columns: repeat(7, 10vmin);
   grid-gap: 0vmin;
-  background-color: blue;
+  background-color: #193e46;
 }
 
 div {

@@ -26,17 +26,6 @@ const winningCombos = [
     ];
 
 
-    const colums=[
-        [0, 7, 14, 21, 28, 35],
-        [1, 8, 15, 22, 27, 36],
-        [2, 9, 16, 23, 30, 37],
-        [3, 10, 17, 24, 31, 38],
-        [4, 11, 18, 25, 32, 39],
-        [5, 12, 19, 26, 33, 40],
-        [6, 13, 20, 27, 34, 41]
-
-    ];
-
     /*---------------------------- Variables (state) ----------------------------*/
 //step 1
 let board , turn, winner, tie
@@ -52,6 +41,7 @@ const resetBtn = document.getElementById('reset-btn')
 /*----------------------------- Event Listeners -----------------------------*/
 
 boardEl.addEventListener('click', handleClick)
+resetBtn.addEventListener('click', init)
 /*-------------------------------- Functions --------------------------------*/
 
 init()
