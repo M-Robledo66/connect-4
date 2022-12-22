@@ -184,56 +184,6 @@ messageEl.textContent= `It's ${turn === 1 ? '1' : '2'} wins the game!`
 //     }
 
 
-// function placePiece(idx){
-//     board[idx]= turn
-// }
 
-
-// function init() {
-
-//     board = [1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-    
-//     //  '1' represents player X
-//     turn = 1
-    
-//     winner = false
-    
-//     tie = false
-//     render()
-    
-//     }
-//  //step 4F
-//     function render () {
-//         updateBoard()
-//         updateMessage()
-//         }
-
-//  //step 4B & 4C 
-// function updateBoard(){
-
-//     board.forEach((boardVal, idx) => {
-//     if (boardVal === 1){
-//     // x ocupies the squareEls[idx] spot
-//     squareEls[idx].textContent = '🔴'
-//     } else if(boardVal === -1){
-//     //O occupies the squareEls[idx] spot
-//     squareEls[idx].textContent = '🔵'
-//     }else {
-//     // if its not 1 or -1, it MUST be null (blank square)
-//     squareEls[idx].textContent = ''
-//     }
-//     })
-//     } 
-//  //step 4D   
-// function updateMessage(){
-
-//     if(!winner && !tie) {
-//     messageEl.textContent= `its ${turn == 1 ? 'X' : 'O'}'s turn`
-//     } else if (!winner && tie){
-//     messageEl.textContent=`Itssa tie 😮‍💨`
-//     }else{
-//     messageEl.textContent= `It's ${turn === 1 ? 'X' : 'O'} wins the game!`
-//     }
-//     } 
     
 
