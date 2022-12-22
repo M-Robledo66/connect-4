@@ -1,25 +1,28 @@
-# connect-4
- Step One define all varibales that will be keeping track of events or objects
- such as the board, the players turn (state), boolean for winner and ties
+# The Connect 4 Game
+--
 
- Step Two: Attach all cached element refrences so that i can manipulate these elements
+ <img width="697" alt="Screenshot 2022-12-22 at 10 19 16 AM" src="https://user-images.githubusercontent.com/119347753/209177967-eea38899-b73d-44ba-b084-a4f1ec3b81c5.png">
 
- Step Three: create a function called init which will be rendering state.
-  
-Step Four: Identify a null for each square element 
+Game Objective: Between two player, take turns dropping tokens down board. A winner is deternined once a player connects four tokens either horizontally, vertically, or diagnally.
+---
 
-Step Five: Set turn to 1 to represent the first player, second player be -1 which is the opposite absolute value.
 
-Step six: boolean winner and tie to false for when it equals to true you have a winner or winner
+Link to game :link: : Click here -> [Connect 4](nostalgic-scarf.surge.sh)
+-- 
+## Technologies Used :atom: :
++ Javascript 
++ CSS 
++ HTML
+-- 
+## Contact :telephone: :
 
-Step Seven: Just call function render at end of init function.
+Miguel Robledo - miguelrobledo773@gmail.com
++ (https://github.com/M-Robledo66/connect-4)
 
-Step eight: Create a function updateBoard to go through each element on board and be able to change the content in each element
 
-Step nine: Create a function update message that will indicate if someone has won or it is a tie.
+## Acknowledgments:
+* [W3schools](https://www.w3schools.com)
+* [CSS-Tricks/Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [MDN Web Docs](https://developer.mozilla.org/en-US/)
 
-Step ten: Invoke the updateBoard and updateMessage inside render function.
 
-Step eleven: Create a const Array that contains all possible winning combinations.
-
-Step tweleve:(50) Create a handleClick function that get the target id on element clicked 
