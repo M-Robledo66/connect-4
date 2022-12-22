@@ -16,4 +16,10 @@ Step Seven: Just call function render at end of init function.
 
 Step eight: Create a function updateBoard to go through each element on board and be able to change the content in each element
 
-Step nine: Create a function update message 
+Step nine: Create a function update message that will indicate if someone has won or it is a tie.
+
+Step ten: Invoke the updateBoard and updateMessage inside render function.
+
+Step eleven: Create a const Array that contains all possible winning combinations.
+
+Step tweleve:(50) Create a handleClick function that get the target id on element clicked 

@@ -115,17 +115,7 @@ function render () {
 updateBoard()
 updateMessage()
 }
-// function updateBoard() {
-//     for (i = 0; i < board.length; i++){
-//         let currentSqr = squareEls[i]
-//         // currentSqr.textContent = ""
-//         if (board[i]=== -1){
-//             currentSqr.textContent = "O"
-//         } else if(board[i] ===1){
-//             currentSqr.textContent = "X"
-//         }
-//     }
-// }
+
 
 function updateBoard(){
 
