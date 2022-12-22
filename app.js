@@ -155,35 +155,5 @@ messageEl.textContent= `It's ${turn === 1 ? '1' : '2'} wins the game!`
 // function handleClick(evt) {
 // let sqIdx = parseInt(evt.target.id.replace('sq', ''))
 
-// if ( board[sqIdx] || winner) return
-// // function that drops token
-// placePiece(sqIdx)
-// checkForTie()
-// checkForWinner()
-// switchPlayerTurn()
-// render()
-// }
-
-// function checkForWinner() {
-//     winningCombos.forEach(combo => {
-//     if (Math.abs(board[combo[0]] + board[combo[1]]+ board[combo[2]]+ board[combo[3]]) ===
-//     4) {
-//     winner = true
-//     }
-//     })
-//     }
-
-// function switchPlayerTurn() {
-//     if (winner) return 
-//     turn *= -1
-    
-//     }
-// function checkForTie () {
-//     if(board.includes(null))return
-//     tie = true
-//     }
-
-
-
     
 
