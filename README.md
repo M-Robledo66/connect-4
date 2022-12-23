@@ -7,12 +7,14 @@ Game Objective: Between two player, take turns dropping tokens down board. A win
 ---
 
 
-Link to game :link: : Click here -> [Connect 4](nostalgic-scarf.surge.sh)
+Link to game :link: : Click here -> [Connect 4](miguel-connect-4.netlify.app)
 -- 
 ## Technologies Used :atom: :
 + Javascript 
 + CSS 
 + HTML
++Git
++Github
 -- 
 ## Contact :telephone: :
 

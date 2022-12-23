@@ -1,5 +1,5 @@
 body {
-    background-color: gray;
+   
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -10,6 +10,7 @@ body {
   background-color: grey;
   justify-content: center;
   align-items: center;
+  background-image: url("../gameboy.jpg");
 }
 
 section.board {
@@ -17,12 +18,23 @@ section.board {
   grid-template-rows: repeat(6, 10vmin);
   grid-template-columns: repeat(7, 10vmin);
   grid-gap: 0vmin;
-  background-color: #193e46;
+  background-color: rgb(38, 15, 190);
+  border-radius: 2%;
 }
 
 div {
-  border: 3px solid black;
+  border: 3px solid rgb(42, 23, 137);
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
+  border-radius: 50%;
+  border-width: 6px;
+  
+}
+#reset-btn{
+  color: darkgray;
+  background-color: darkslategrey;
+  border-radius: 20%;
+  
+
 }

@@ -41,21 +41,22 @@ const resetBtn = document.getElementById('reset-btn')
 /*----------------------------- Event Listeners -----------------------------*/
 
 boardEl.addEventListener('click', handleClick)
+
 resetBtn.addEventListener('click', init)
 /*-------------------------------- Functions --------------------------------*/
 
 init()
 
 function handleClick(evt) {
-let sqIdx = parseInt(evt.target.id.replace('sq', ''))
+    let sqIdx = parseInt(evt.target.id.replace('sq', ''))
 
-if ( board[sqIdx] || winner){ return
-}
-startPoint = 35
-while (board[sqIdx+ startPoint]!==null){
-    startPoint -= 7
-}
-board[sqIdx+startPoint]= turn
+    if ( board[sqIdx] || winner){ return
+    }
+    startPoint = 35
+    while (board[sqIdx+ startPoint]!==null){
+        startPoint -= 7
+    }
+    board[sqIdx+startPoint]= turn
 
 
 checkForTie()
@@ -63,35 +64,34 @@ checkForWinner()
 switchPlayerTurn()
 render()
 }
-
+// runs through board to check each number for match
 function checkForWinner() {
-winningCombos.forEach(combo => {
-if (Math.abs(board[combo[0]] + 
-            board[combo[1]]+ 
-            board[combo[2]]+ 
-            board[combo[3]]) ===
-        4) {
-winner = true
-}
-})
-}
+    winningCombos.forEach(combo => {
+    if (Math.abs(board[combo[0]] + 
+                board[combo[1]]+ 
+                board[combo[2]]+ 
+                board[combo[3]]) ===
+            4) {
+    winner = true
+    }
+    })
+    }
 
 
 function switchPlayerTurn() {
-if (winner) return 
-turn *= -1
-
-}
-
+    if (winner) return 
+    turn *= -1
+    }
+// if there are no nulls on board tie is true
 function checkForTie () {
-if(board.includes(null))return
-tie = true
-}
+    if(board.includes(null))return
+    tie = true
+    }
 
-
+// this function switches turns for every index taken
 function placePiece(idx) {
-board[idx] = turn
-}
+    board[idx] = turn
+    }
 
 
 
@@ -107,7 +107,6 @@ winner = false
 
 tie = false
 render()
-
 }
 // init function will initialize the game state of player
 
@@ -137,23 +136,16 @@ squareEls[idx].textContent = ''
 
 function updateMessage(){
 
-if(!winner && !tie) {
-messageEl.textContent= `its ${turn == 1 ? '1' : '2'}'s turn`
-} else if (!winner && tie){
-messageEl.textContent=`Itssa tie 😮‍💨`
-}else{
-messageEl.textContent= `It's ${turn === 1 ? '1' : '2'} wins the game!`
-}
-}
+    if(!winner && !tie) {
+    messageEl.textContent= `Player ${turn == 1 ? '1' : '2'}'s turn`
+    } else if (!winner && tie){
+    messageEl.textContent=`Itssa tie 😮‍💨`
+    }else{
+    messageEl.textContent= `Player ${turn === 1 ? '1' : '2'} wins the game!`
+    }
+    }
 
 
-// boardEl.addEventListener('click', handleClick)
-
-
-// init()
-
-// function handleClick(evt) {
-// let sqIdx = parseInt(evt.target.id.replace('sq', ''))
 
     
 
