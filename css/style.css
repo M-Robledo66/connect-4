@@ -15,7 +15,7 @@ body {
   
   justify-content: center;
   align-items: center;
-  background-image: url("/assets/img/thegameboy.jpeg");
+  background-image: url("/assets/img/Connect-4.jpeg");
   
 }
 h1{
@@ -32,7 +32,7 @@ section.board {
   grid-template-rows: repeat(6, 10vmin);
   grid-template-columns: repeat(7, 10vmin);
   grid-gap: 0vmin;
-  background-color: rgba(25, 89, 168, 0.589);
+  background-color: rgba(25, 89, 168, 0.702);
   border-radius: 2%;
 
 }
@@ -57,7 +57,7 @@ z-index: 1;
   background-color: rgb(222, 222, 55);
   border-radius: 20%;
   height: 50px;
-  width: 80px;
+  width: 200px;
   font-size: large;
   font-family: Cambria, Cochin, Times, 'Times New Roman', serif;
 }

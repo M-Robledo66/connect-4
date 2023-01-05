@@ -44,8 +44,6 @@ const winSound = new Audio ('../assets/audio/winSound.wav')
 
 boardEl.addEventListener('click', handleClick)
 
-//document.getElementById('button').addEventListener("click", sound)
-
 resetBtn.addEventListener('click', init)
 /*-------------------------------- Functions --------------------------------*/
 
@@ -65,6 +63,7 @@ function handleClick(evt) {
     checkForWinner()
     switchPlayerTurn()
     render()
+    
 }
 
 function checkForWinner() {
@@ -76,11 +75,14 @@ function checkForWinner() {
        }
     })
 }
-function theSound(){
+
+
+function theSound() {
     sound.play()
     sound.volume = 0.25
-  }
-function winSounds(){
+}
+
+function winSounds() {
     winSound.play()
     winSound.volume = 0.35
 
@@ -113,7 +115,7 @@ function render () {
         updateMessage()
 }
 
-function updateBoard(){
+function updateBoard() {
     board.forEach((boardVal, idx) => {
         if (boardVal === 1){
             squareEls[idx].style.backgroundColor = 'red'
@@ -136,6 +138,7 @@ function updateMessage(){
         messageEl.textContent=`Itssa tie 😮‍💨`
     }else{
         messageEl.textContent= `Player ${turn === 1 ? '1' : '2'} wins the game!`
+       
     }
 }
 
