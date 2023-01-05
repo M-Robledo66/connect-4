@@ -38,6 +38,8 @@ const boardEl = document.querySelector('.board')
 const resetBtn = document.getElementById('reset-btn')
 
 const sound = new Audio('../assets/audio/button-3.mp3')
+
+const winSound = new Audio ('../assets/audio/winSound.wav')
 /*----------------------------- Event Listeners -----------------------------*/
 
 boardEl.addEventListener('click', handleClick)
@@ -70,13 +72,18 @@ function checkForWinner() {
         if (Math.abs(board[combo[0]] + board[combo[1]]+ board[combo[2]]+ board[combo[3]]) ===
         4) {
         winner = true
+        winSounds()
        }
     })
 }
 function theSound(){
     sound.play()
-    sound.volume = 0.85
-  
+    sound.volume = 0.25
+  }
+function winSounds(){
+    winSound.play()
+    winSound.volume = 0.35
+
 }
 
 function switchPlayerTurn() {
