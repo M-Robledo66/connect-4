@@ -4,14 +4,27 @@ body {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	margin: 0;
-  height: 100vh;
+  height: 750px;
   display: flex;
   flex-direction: column;
   background-color: grey;
+  background-size: cover;
+  background-position: 1px, center;
+  
+
+  
   justify-content: center;
   align-items: center;
-  background-image: url("/assets/img/gameboy.jpg");
+  background-image: url("/assets/img/thegameboy.jpeg");
   
+}
+h1{
+  background-color: yellow;
+  border-radius: 70%;
+  width: 300px;
+  text-align: center;
+  font-family: Cambria, Cochin, Times, 'Times New Roman', serif;
+
 }
 
 section.board {
@@ -19,18 +32,20 @@ section.board {
   grid-template-rows: repeat(6, 10vmin);
   grid-template-columns: repeat(7, 10vmin);
   grid-gap: 0vmin;
-  background-color: rgb(38, 15, 190);
+  background-color: rgba(25, 89, 168, 0.589);
   border-radius: 2%;
+
 }
 
 div {
-  border: 3px solid rgb(42, 23, 137);
+  border: 3px solid rgb(11, 41, 90);
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
   border-radius: 50%;
   border-width: 6px;
   
+
 }
 #reset-btn{
   color: black;
@@ -39,7 +54,14 @@ div {
   height: 50px;
   width: 80px;
   font-size: large;
-  
-  
+  font-family: Cambria, Cochin, Times, 'Times New Roman', serif;
+}
+
+#message{
+  font-family: Cambria, Cochin, Times, 'Times New Roman', serif;
+  background-color: yellow;
+  border-radius: 70%;
+  width: 300px;
+  text-align: center;
 
 }

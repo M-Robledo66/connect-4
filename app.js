@@ -36,9 +36,13 @@ const messageEl = document.getElementById('message')
 const boardEl = document.querySelector('.board')
 
 const resetBtn = document.getElementById('reset-btn')
+
+const sound = new Audio('../assets/audio/button-3.mp3')
 /*----------------------------- Event Listeners -----------------------------*/
 
 boardEl.addEventListener('click', handleClick)
+
+//document.getElementById('button').addEventListener("click", sound)
 
 resetBtn.addEventListener('click', init)
 /*-------------------------------- Functions --------------------------------*/
@@ -54,6 +58,7 @@ function handleClick(evt) {
         startPoint -= 7
     }
     board[sqIdx+startPoint]= turn
+    theSound()
     checkForTie()
     checkForWinner()
     switchPlayerTurn()
@@ -67,6 +72,11 @@ function checkForWinner() {
         winner = true
        }
     })
+}
+function theSound(){
+    sound.play()
+    sound.volume = 0.85
+  
 }
 
 function switchPlayerTurn() {
@@ -100,13 +110,16 @@ function updateBoard(){
     board.forEach((boardVal, idx) => {
         if (boardVal === 1){
             squareEls[idx].style.backgroundColor = 'red'
+            
         } else if(boardVal === -1){
             squareEls[idx].style.backgroundColor = 'blue'
+   
         }else {
-            squareEls[idx].textContent = ''
+            squareEls[idx].style.backgroundColor = ''
         }
     })
 }
+
 
 function updateMessage(){
 
