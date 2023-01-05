@@ -49,101 +49,85 @@ init()
 
 function handleClick(evt) {
     let sqIdx = parseInt(evt.target.id.replace('sq', ''))
-
     if ( board[sqIdx] || winner){ return
     }
-    startPoint = 35
+        startPoint = 35
     while (board[sqIdx+ startPoint]!==null){
         startPoint -= 7
     }
     board[sqIdx+startPoint]= turn
-
-
-checkForTie()
-checkForWinner()
-switchPlayerTurn()
-render()
+    checkForTie()
+    checkForWinner()
+    switchPlayerTurn()
+    render()
 }
-// runs through board to check each number for match
+
 function checkForWinner() {
     winningCombos.forEach(combo => {
-    if (Math.abs(board[combo[0]] + 
-                board[combo[1]]+ 
-                board[combo[2]]+ 
-                board[combo[3]]) ===
-            4) {
-    winner = true
-    }
+        if (Math.abs(board[combo[0]] + board[combo[1]]+ board[combo[2]]+ board[combo[3]]) ===
+        4) {
+        winner = true
+       }
     })
-    }
+}
 
 
 function switchPlayerTurn() {
     if (winner) return 
     turn *= -1
-    }
-// if there are no nulls on board tie is true
+}
+
 function checkForTie () {
     if(board.includes(null))return
     tie = true
-    }
+}
 
-// this function switches turns for every index taken
 function placePiece(idx) {
     board[idx] = turn
-    }
+}
 
 
 
 
 function init() {
-
-board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-
-//  '1' represents player X
-turn = 1
-
-winner = false
-
-tie = false
-render()
+    board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    turn = 1
+    winner = false
+    tie = false
+    render()
 }
 // init function will initialize the game state of player
 
 function render () {
-updateBoard()
-updateMessage()
+        updateBoard()
+         updateMessage()
 }
 
 
 function updateBoard(){
-
-board.forEach((boardVal, idx) => {
-if (boardVal === 1){
-// x ocupies the squareEls[idx] spot
-squareEls[idx].textContent = '🔴'
-} else if(boardVal === -1){
-//O occupies the squareEls[idx] spot
-squareEls[idx].textContent = '🔵'
-}else {
-// if its not 1 or -1, it MUST be null (blank square)
-squareEls[idx].textContent = ''
-}
-})
+    board.forEach((boardVal, idx) => {
+        if (boardVal === 1){
+            squareEls[idx].textContent = '🔴'
+        } else if(boardVal === -1){
+            squareEls[idx].textContent = '🔵'
+        }else {
+            squareEls[idx].textContent = ''
+        }
+    })
 }
 
 
 
 function updateMessage(){
 
-    if(!winner && !tie) {
-    messageEl.textContent= `Player ${turn == 1 ? '1' : '2'}'s turn`
+    if (!winner && !tie) {
+        messageEl.textContent= `Player ${turn == 1 ? '1' : '2'}'s turn`
     } else if (!winner && tie){
-    messageEl.textContent=`Itssa tie 😮‍💨`
+        messageEl.textContent=`Itssa tie 😮‍💨`
     }else{
-    messageEl.textContent= `Player ${turn === 1 ? '1' : '2'} wins the game!`
+        messageEl.textContent= `Player ${turn === 1 ? '1' : '2'} wins the game!`
     }
-    }
+}
 
 
 

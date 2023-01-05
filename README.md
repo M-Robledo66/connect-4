@@ -7,14 +7,14 @@ Game Objective: Between two player, take turns dropping tokens down board. A win
 ---
 
 
-Link to game :link: : Click here -> [Connect 4](miguel-connect-4.netlify.app)
+Link to game :link: : Click here -> [Connect 4](https://miguel-robledo-connect-4.netlify.app)
 -- 
 ## Technologies Used :atom: :
 + Javascript 
 + CSS 
 + HTML
-+Git
-+Github
++ Git
++ Github
 -- 
 ## Contact :telephone: :
 
@@ -26,5 +26,9 @@ Miguel Robledo - miguelrobledo773@gmail.com
 * [W3schools](https://www.w3schools.com)
 * [CSS-Tricks/Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [MDN Web Docs](https://developer.mozilla.org/en-US/)
+
+## IceBox
+- [ ] An uncompleted task
+         - [x] A completed task
 
 
