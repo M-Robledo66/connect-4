@@ -10,7 +10,8 @@ body {
   background-color: grey;
   justify-content: center;
   align-items: center;
-  background-image: url("../gameboy.jpg");
+  background-image: url("/assets/img/gameboy.jpg");
+  
 }
 
 section.board {
@@ -32,9 +33,13 @@ div {
   
 }
 #reset-btn{
-  color: darkgray;
-  background-color: darkslategrey;
+  color: black;
+  background-color: rgb(222, 222, 55);
   border-radius: 20%;
+  height: 50px;
+  width: 80px;
+  font-size: large;
+  
   
 
 }

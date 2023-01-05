@@ -1,4 +1,4 @@
-//step 5
+
 const winningCombos = [ 
     [0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
     [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
@@ -26,11 +26,9 @@ const winningCombos = [
     ];
 
 
-    /*---------------------------- Variables (state) ----------------------------*/
-//step 1
+/*---------------------------- Variables (state) ----------------------------*/
 let board , turn, winner, tie
 /*------------------------ Cached Element References ------------------------*/
-//step 2
 const squareEls = document.querySelectorAll('.sqr')
 
 const messageEl = document.getElementById('message')
@@ -71,7 +69,6 @@ function checkForWinner() {
     })
 }
 
-
 function switchPlayerTurn() {
     if (winner) return 
     turn *= -1
@@ -86,9 +83,6 @@ function placePiece(idx) {
     board[idx] = turn
 }
 
-
-
-
 function init() {
     board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
     turn = 1
@@ -96,27 +90,23 @@ function init() {
     tie = false
     render()
 }
-// init function will initialize the game state of player
 
 function render () {
         updateBoard()
-         updateMessage()
+        updateMessage()
 }
-
 
 function updateBoard(){
     board.forEach((boardVal, idx) => {
         if (boardVal === 1){
-            squareEls[idx].textContent = '🔴'
+            squareEls[idx].style.backgroundColor = 'red'
         } else if(boardVal === -1){
-            squareEls[idx].textContent = '🔵'
+            squareEls[idx].style.backgroundColor = 'blue'
         }else {
             squareEls[idx].textContent = ''
         }
     })
 }
-
-
 
 function updateMessage(){
 
