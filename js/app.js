@@ -71,11 +71,10 @@ function checkForWinner() {
   winningCombos.forEach(combo => {
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]) === 4) {
       winner = true
-      winSounds()
+     winSounds()
     }
   })
 }
-
 
 function theSound() {
   sound.play()
@@ -85,6 +84,7 @@ function theSound() {
 function winSounds() {
   winSound.play()
   winSound.volume = 0.35
+
 
 }
 
@@ -138,7 +138,7 @@ function updateMessage() {
     messageEl.textContent = `Itssa tie 😮‍💨`
   } else {
     messageEl.textContent = `Player ${turn === 1 ? '1' : '2'} wins the game!`
-
+    confetti.start(1500)
   }
 }
 
